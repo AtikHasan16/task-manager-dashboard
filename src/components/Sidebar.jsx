@@ -1,8 +1,13 @@
 import React from 'react'
+import Logo from './Logo'
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div>
+      <div>
+        <Logo></Logo>
+      </div>
+    </div>
   )
 }
 
