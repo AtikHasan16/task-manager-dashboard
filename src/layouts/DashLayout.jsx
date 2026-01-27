@@ -6,12 +6,15 @@ import Sidebar from "../components/Sidebar";
 const DashLayout = () => {
   return (
     <>
-      <header>
+      <div className="flex">
+
+      <header className="order-1 flex-1">
         <Navbar></Navbar>
       </header>
-      <aside>
+      <aside className=" w-20 md:w-40 lg:w-60  ">
         <Sidebar></Sidebar>
       </aside>
+      </div>
       <main>
         <Outlet></Outlet>
       </main>
