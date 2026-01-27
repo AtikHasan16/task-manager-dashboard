@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
 const DashLayout = () => {
   return (
@@ -8,6 +9,9 @@ const DashLayout = () => {
       <header>
         <Navbar></Navbar>
       </header>
+      <aside>
+        <Sidebar></Sidebar>
+      </aside>
       <main>
         <Outlet></Outlet>
       </main>
