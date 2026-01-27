@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin 'daisyui';
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+}
+body {
+  height: 100vh;
+  color: white;
+  background: linear-gradient(
+    152deg,
+    rgba(2, 6, 24, 1) 0%,
+    rgba(22, 36, 86, 1) 50%,
+    rgba(15, 23, 43, 1) 100%
+  );
+}
