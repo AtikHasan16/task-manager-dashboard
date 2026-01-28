@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
-import {  NavLink } from "react-router";
-import { Home, PhoneCall } from "lucide-react";
+import { NavLink } from "react-router";
+import { Home, PhoneCall, Settings } from "lucide-react";
 
 const Sidebar = () => {
   const links = (
@@ -18,6 +18,12 @@ const Sidebar = () => {
           <span className="hidden lg:flex">Call Logs</span>
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/settings" className="flex items-center gap-4">
+          <Settings></Settings>
+          <span className="hidden lg:flex">Settings</span>
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -26,7 +32,7 @@ const Sidebar = () => {
         <Logo></Logo>
       </div>
       <div>
-        <ul className="mt-20 flex flex-col gap-7 font-medium">{links}</ul>
+        <ul className="mt-18 flex flex-col items-center lg:items-start gap-7 font-medium p-2">{links}</ul>
       </div>
     </div>
   );

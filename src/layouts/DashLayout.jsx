@@ -7,13 +7,12 @@ const DashLayout = () => {
   return (
     <>
       <div className="flex">
-
-      <header className="order-1 flex-1">
-        <Navbar></Navbar>
-      </header>
-      <aside className=" w-20 md:w-40 lg:w-60  ">
-        <Sidebar></Sidebar>
-      </aside>
+        <header className="order-1 flex-1">
+          <Navbar></Navbar>
+        </header>
+        <aside className="">
+          <Sidebar></Sidebar>
+        </aside>
       </div>
       <main>
         <Outlet></Outlet>
