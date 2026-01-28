@@ -17,6 +17,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import RecentActivity from "../components/RecentActivity";
+import RepairRequests from "../components/RepairRequests";
 
 const Home = () => {
   const chartData = [
@@ -103,7 +105,6 @@ const Home = () => {
             <p className="text-sm text-gray-400">Total: 572 calls</p>
           </div>
           <button className="rounded-xl bg-[#1D293D] px-5 py-2 text-sm text-white select:text-white flex items-center gap-2">
-            {" "}
             This Week <ChevronDown />
           </button>
         </div>
@@ -137,6 +138,12 @@ const Home = () => {
             />
           </AreaChart>
         </ResponsiveContainer>
+      </div>
+
+      {/* Bottom Section: Recent Activity + Top Repair Requests */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <RecentActivity />
+        <RepairRequests />
       </div>
     </div>
   );
