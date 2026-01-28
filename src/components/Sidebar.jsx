@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import { NavLink } from "react-router";
-import { Calendar, Home, PhoneCall, Settings } from "lucide-react";
+import { Calendar, Home, LogOut, PhoneCall, Settings } from "lucide-react";
 
 const Sidebar = () => {
   const menuStyle =
@@ -36,7 +36,7 @@ const Sidebar = () => {
     </>
   );
   return (
-    <div className="bg-primary h-screen p-2 px-4 w-full flex flex-col">
+    <div className="bg-primary h-screen p-2 px-4 w-full flex flex-col justify-between">
       <div>
         <div className="flex justify-center pt-10">
           <Logo />
@@ -44,6 +44,12 @@ const Sidebar = () => {
         <ul className="flex flex-col pt-18  gap-7 w-full font-medium">
           {links}
         </ul>
+      </div>
+      <div className="mb-6">
+        <button className="flex w-full items-center gap-2 ">
+          <LogOut className="font-bold text-gray-500 " />
+          <span className="font-medium text-[#FF1100]">Log Out</span>
+        </button>
       </div>
     </div>
   );
