@@ -19,7 +19,6 @@ import {
 } from "recharts";
 
 const Home = () => {
-  // Mock data for the chart
   const chartData = [
     { day: "Mon", calls: 50 },
     { day: "Tue", calls: 60 },
@@ -30,7 +29,6 @@ const Home = () => {
     { day: "Sun", calls: 90 },
   ];
 
-  // Stats data
   const stats = [
     {
       title: "Total Calls Today",
@@ -76,38 +74,6 @@ const Home = () => {
     },
   ];
 
-  // Recent activity data
-  const activities = [
-    {
-      title: "AI booked appointment for iPhone 13 screen repair",
-      time: "2 min ago",
-      color: "bg-green-500",
-    },
-    {
-      title: "Warm transfer to technician - Software issue",
-      time: "5 min ago",
-      color: "bg-orange-500",
-    },
-    {
-      title: "Quote provided for iPad battery replacement",
-      time: "8 min ago",
-      color: "bg-blue-500",
-    },
-    {
-      title: "Call dropped after 12 seconds",
-      time: "12 min ago",
-      color: "bg-red-500",
-    },
-  ];
-
-  // Top repair requests
-  const repairRequests = [
-    { name: "Screen Repair", count: 156, percentage: 100 },
-    { name: "Battery Replacement", count: 89, percentage: 57 },
-    { name: "Back Glass Repair", count: 67, percentage: 43 },
-    { name: "Software Issues", count: 45, percentage: 29 },
-  ];
-
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -130,25 +96,24 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Call Trends Chart */}
-      <div className="rounded-xl bg-[#1c2136] p-6 shadow-lg">
+      <div className="rounded-xl bg-[#0F172B] p-6 shadow-lg">
         <div className="mb-4 flex items-center justify-between">
           <div>
             <h2 className="text-xl text-white">Call Trends - This Week</h2>
             <p className="text-sm text-gray-400">Total: 572 calls</p>
           </div>
-          <button className="rounded-xl bg-[#1D293D] px-5 py-3 text-sm text-white select:text-white flex items-center gap-2">
+          <button className="rounded-xl bg-[#1D293D] px-5 py-2 text-sm text-white select:text-white flex items-center gap-2">
             {" "}
             This Week <ChevronDown />
           </button>
         </div>
 
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={400}>
           <AreaChart data={chartData}>
             <defs>
               <linearGradient id="colorCalls" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#0F172B" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
@@ -156,9 +121,9 @@ const Home = () => {
             <YAxis stroke="#9ca3af" />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#1c2136",
-                border: "1px solid #374151",
-                borderRadius: "8px",
+                backgroundColor: "#0F172B",
+
+                borderRadius: "16px",
                 color: "#fff",
               }}
             />
@@ -172,56 +137,6 @@ const Home = () => {
             />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
-
-      {/* Bottom Section: Recent Activity + Top Repair Requests */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {/* Recent Activity */}
-        <div className="rounded-xl bg-[#1c2136] p-6 shadow-lg">
-          <h2 className="mb-4 text-xl font-semibold text-white">
-            Recent Activity
-          </h2>
-          <div className="space-y-4">
-            {activities.map((activity, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div
-                  className={`mt-1 h-2 w-2 rounded-full ${activity.color}`}
-                ></div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-300">{activity.title}</p>
-                  <p className="mt-1 text-xs text-gray-500">{activity.time}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Top Repair Requests */}
-        <div className="rounded-xl bg-[#1c2136] p-6 shadow-lg">
-          <h2 className="mb-4 text-xl font-semibold text-white">
-            Top Repair Requests
-          </h2>
-          <div className="space-y-4">
-            {repairRequests.map((request, index) => (
-              <div key={index}>
-                <div className="mb-2 flex items-center justify-between">
-                  <p className="text-sm font-medium text-gray-300">
-                    {request.name}
-                  </p>
-                  <p className="text-sm text-gray-400">
-                    {request.count} requests
-                  </p>
-                </div>
-                <div className="h-2 overflow-hidden rounded-full bg-[#0f121e]">
-                  <div
-                    className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
-                    style={{ width: `${request.percentage}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );
