@@ -4,43 +4,44 @@ import { NavLink } from "react-router";
 import { Calendar, Home, PhoneCall, Settings } from "lucide-react";
 
 const Sidebar = () => {
-  const menuStyle = "flex items-center gap-4 ";
+  const menuStyle =
+    "w-full flex p-2 justify-center lg:justify-start gap-2 items-center border-1 border-transparent rounded-md ";
 
   const links = (
     <>
-      <li>
-        <NavLink to="/" className={`${menuStyle}`}>
-          <Home></Home>{" "}
+      <li className="w-full">
+        <NavLink className={menuStyle} to="/">
+          <Home className="" />
           <span className="hidden lg:flex">Dashboard Overview</span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/call-logs" className={`${menuStyle}`}>
-          <PhoneCall></PhoneCall>{" "}
+      <li className="w-full">
+        <NavLink className={menuStyle} to="/call-logs">
+          <PhoneCall className="" />
           <span className="hidden lg:flex">Call Logs</span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/appointments" className={`${menuStyle}`}>
-          <Calendar></Calendar>
+      <li className="w-full">
+        <NavLink className={menuStyle} to="/appointments">
+          <Calendar className="" />
           <span className="hidden lg:flex">Appointment</span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/settings" className={`${menuStyle}`}>
-          <Settings></Settings>
+      <li className="w-full">
+        <NavLink className={menuStyle} to="/settings">
+          <Settings className="" />
           <span className="hidden lg:flex">Settings</span>
         </NavLink>
       </li>
     </>
   );
   return (
-    <div className="bg-primary text-white h-screen p-2 ">
-      <div className="flex justify-center pt-9">
-        <Logo></Logo>
-      </div>
+    <div className="bg-primary h-screen p-2 px-4 w-full flex flex-col">
       <div>
-        <ul className="mt-18 flex flex-col items-center lg:items-start gap-7 font-medium p-2">
+        <div className="flex justify-center pt-10">
+          <Logo />
+        </div>
+        <ul className="flex flex-col pt-18  gap-7 w-full font-medium">
           {links}
         </ul>
       </div>

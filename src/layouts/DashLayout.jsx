@@ -5,20 +5,19 @@ import Sidebar from "../components/Sidebar";
 
 const DashLayout = () => {
   return (
-    <>
-      <div className="flex">
-        <header className="order-1 flex-1">
-          <Navbar></Navbar>
+    <div className="flex h-screen w-full overflow-hidden">
+      <aside className="">
+        <Sidebar />
+      </aside>
+      <div className="flex flex-1 flex-col">
+        <header>
+          <Navbar />
         </header>
-        <aside className="">
-          <Sidebar></Sidebar>
-        </aside>
+        <main className="">
+          <Outlet />
+        </main>
       </div>
-      <main>
-        <Outlet></Outlet>
-      </main>
-      <footer></footer>
-    </>
+    </div>
   );
 };
 
