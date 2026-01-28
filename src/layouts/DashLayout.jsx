@@ -13,7 +13,7 @@ const DashLayout = () => {
         <header>
           <Navbar />
         </header>
-        <main className="">
+        <main className="p-6">
           <Outlet />
         </main>
       </div>
