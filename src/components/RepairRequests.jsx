@@ -14,7 +14,7 @@ const RepairRequests = () => {
   ];
 
   return (
-    <div className="rounded-xl bg-[#0F172B] p-6 shadow-lg">
+    <div className="rounded-xl bg-[#0F172B] p-7 shadow-lg">
       <h2 className="mb-6 text-xl text-white">Top Repair Requests</h2>
       <div className="space-y-5">
         {repairRequests.map((request, index) => (

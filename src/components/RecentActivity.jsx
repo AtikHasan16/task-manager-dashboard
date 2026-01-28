@@ -25,7 +25,7 @@ const RecentActivity = () => {
   ];
 
   return (
-    <div className="rounded-xl bg-[#0F172B] p-6 shadow-lg">
+    <div className="rounded-xl bg-[#0F172B] p-7 shadow-lg">
       <h2 className="mb-6 text-xl text-white">Recent Activity</h2>
       <div className="space-y-4">
         {activities.map((activity, index) => (
@@ -33,7 +33,7 @@ const RecentActivity = () => {
             <div
               className={`mt-1.5 h-2 w-2 rounded-full ${activity.color}`}
             ></div>
-            <div className="flex-1">
+            <div className="flex-1 bg-[#1D293D50] p-3 rounded-xl">
               <p className="text-sm text-gray-300">{activity.title}</p>
               <p className="mt-1 text-xs text-gray-500">{activity.time}</p>
             </div>
